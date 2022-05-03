@@ -1,3 +1,4 @@
+
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -7,3 +8,15 @@
 
 // start the Stimulus application
 import './bootstrap';
+import './css/tailwinds.css';
+
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import App from './App.vue'
+
+
+const app = createApp(App)
+
+app.use(createPinia())
+
+app.mount('#app')

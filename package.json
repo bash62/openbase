@@ -7,6 +7,7 @@
         "autoprefixer": "^10.4.4",
         "core-js": "^3.0.0",
         "postcss": "^8.4.12",
+        "postcss-loader": "^6.2.1",
         "regenerator-runtime": "^0.13.2",
         "tailwindcss": "^3.0.24",
         "vue": "^3.2.31",
@@ -16,9 +17,12 @@
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
-        "dev-server": "encore dev-server",
-        "dev": "encore dev",
+        "build:css": "npx tailwindcss -i ./asset/css/tailwinds.css -o ./public/build/app.css --watch",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "pinia": "^2.0.13",
+        "vue-router": "^4.0.14"
     }
 }

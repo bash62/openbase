@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
-use App\Controller\CustomApiReqController;
+
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -13,14 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * 
  * @ApiResource(
-*     collectionOperations={"get"={}},
-*     itemOperations={
-*     "get"={},
-*     "count_user"={ "method"="GET",
-*          "path"="/users/count",
-*          "controller"=App\Controller\api\CustomApiReqController::class
-*       },
-*   }
+ * 
 * )
  */
 

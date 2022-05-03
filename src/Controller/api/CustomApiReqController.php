@@ -2,7 +2,7 @@
 
 namespace App\Controller\api;
 use App\Entity\User;
-
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Attribute\AsController;
@@ -11,21 +11,23 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 #[AsController]
-class CustomApiReqController extends AbstractController
+class CustomApiReqController 
 {
 
-    public function getUserCount(){
+    protected $em;
 
-    }
-
-
-    #[Route('/custom/api/req', name: 'app_custom_api_req')]
-    public function index(): Response
+    public function __construct(EntityManagerInterface $em)
     {
-        return $this->render('custom_api_req/index.html.twig', [
-            'controller_name' => 'CustomApiReqController',
-        ]);
+        $this->em = $em;
     }
+
+    public function __invoke(User $data)
+    {
+
+        dd($data);
+        
+    }
+
 }
 
 

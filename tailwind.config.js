@@ -1,7 +1,5 @@
 module.exports = {
-  content: ["./assets/components/**/*.vue",
-            "./templates/**/*.html.twig"
-],
+  content: ["./assets/components/**/*.vue", "./templates/**/*.html.twig"],
   theme: {
     extend: {
       colors: {
